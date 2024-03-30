@@ -56,7 +56,7 @@ app.use(express.json());
 
 
 
-mongoose.connect(process.env.DATABASE_URL)
+mongoose.connect("mongodb+srv://prati:prati@cluster0.1c29sup.mongodb.net/")
 .then(()=>console.log("database connected successfully"))
 .catch((err)=>console.log("Error connecting with databse",err))
 
@@ -69,8 +69,8 @@ app.use("/api/v1/coupon",couponRoutes);
 app.use("/api/v1/order", authMiddlware(["admin"]),orderRoutes);
 
 
-
-app.listen(process.env.PORT ,()=>{
-    console.log(`server is up and running on port ${process.env.PORT}`);
+const PORT=10000;
+app.listen(PORT ,()=>{
+    console.log(`server is up and running on port ${PORT}`);
 })
 

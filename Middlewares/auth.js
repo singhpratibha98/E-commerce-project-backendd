@@ -7,7 +7,7 @@ const authMiddlware = (role) => async (req, res, next) => {
   //if my token is get expire then my jwt token is not verify ..
   try {
     const tokenFromHeader = req.headers.authorization.split(" ")[1]; // to remove Bearer token we use like this ..
-    const data = jwt.verify(tokenFromHeader, process.env.JWT_SECRET_KEY);
+    const data = jwt.verify(tokenFromHeader, "237dnkjhekfqu341824");
     // console.log("TOKEN",tokenFromHeader);
     const payload = jwt.decode(tokenFromHeader);
 
